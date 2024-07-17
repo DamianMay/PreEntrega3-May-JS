@@ -46,7 +46,7 @@ function Pedido() {
     let metodoPagoValido = false;
 
     while(!metodoPagoValido){
-        let pago = prompt("Tu total a abonar es de: $"+ total + " ¿Como vas a abonarlo?(Selecciona con el número de fila el medio de pago que quieras)\n1. Tarjeta de credito (6 pagos de $"+ cuotas6 +") \n2. Tarjeta de debito (10% dto. "+pago10dto+") \n3. Transferencia (30% dto. "+pago30dto+" )")
+        let pago = prompt("Tu total a abonar es de: $"+ total + " ¿Como vas a abonarlo?(Selecciona con el número de fila el medio de pago que quieras)\n1. Tarjeta de credito (6 pagos de $"+ cuotas6 +") \n2. Tarjeta de debito (10% dto. $"+pago10dto+") \n3. Transferencia (30% dto. $"+pago30dto+" )")
         switch (pago){
             case '1':
                 alert("Has seleccionado pagar con tarjeta de crédito.");
