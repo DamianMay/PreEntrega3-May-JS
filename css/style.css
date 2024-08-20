@@ -80,7 +80,7 @@ li a{
 }
 
 .banner {
-    background-image: url(/Imagenes/foto-banner.webp);
+    background-image: url(../Imagenes/foto-banner.webp);
     background-position: center; 
     background-attachment: fixed;
     width: 100%;
