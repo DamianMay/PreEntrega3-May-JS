@@ -105,25 +105,25 @@ const productos = [
         titulo: "Body beba mini",
         precio: 5500 ,
         talle: "Talle: 3,6,9,12 meses",
-        img: "../imagenes/3801.webp"
+        img: "../Imagenes/3801.webp"
     },
     {
         titulo: "Remera de bebe",
         precio: 4900 ,
         talle: "Talle: 12,18,24,36 meses",
-        img: "../imagenes/3864.webp"
+        img: "../Imagenes/3864.webp"
     },
     {
         titulo: "Musculosa con botones",
         precio: 8900 ,
         talle: "Talle: 4,6,8,10 años",
-        img: "../imagenes/3911.webp"
+        img: "../Imagenes/3911.webp"
     },
     {
         titulo: "Remera de niño",
         precio: 11000 ,
         talle: "Talle: 10,12,14,16 años",
-        img: "../imagenes/3961.webp"
+        img: "../Imagenes/3961.webp"
     },
 ]
 
