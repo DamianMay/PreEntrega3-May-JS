@@ -135,7 +135,7 @@ productos.forEach((producto) =>{
     let div = document.createElement("div");
     div.classList.add("product")
     div.innerHTML = `
-        <img class="ventaProductos" src="${producto.img}"</img>
+        <img class="ventaProductos" src="${producto.img}">
         <h2>${producto.titulo}</h2>
         <p class="price">$${producto.precio}</p>
         <p class="cuotas">${producto.talle}</p>
