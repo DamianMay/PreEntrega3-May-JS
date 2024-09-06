@@ -155,7 +155,7 @@ const mostrarProductos = (productos) => {
             `;
             div.querySelector('.producto-container').addEventListener('click', () => {
                 localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
-                window.location.href = '../pages/producto-unico.html'; 
+                window.location.href = './pages/producto-unico.html'; 
             });
             let button = document.createElement("button");
             button.classList.add("botonCompra");
