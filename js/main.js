@@ -20,7 +20,7 @@ fetch("./data/productos.json")
             div.classList.add("product");
             div.innerHTML = `
                 <div class="producto-container">
-                    <img class="ventaProductos" src="${productos.img}">
+                    <img class="ventaProductos" src="${producto.img}">
                     <div class="overlay-text">Ver producto único</div>
                 </div>
                 <h2>${producto.titulo}</h2>
