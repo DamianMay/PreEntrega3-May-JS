@@ -13,33 +13,34 @@ fetch("../data/productos.json")
     .then((data) => {
         mostrarProductos(data);
     });
-const mostrarProductos = (productos) => {
-    productos.forEach((producto) => {
-        let div = document.createElement("div");
-        div.classList.add("product");
-        div.innerHTML = `
-            <div class="producto-container">
-                <img class="ventaProductos" src="${producto.img}">
-                <div class="overlay-text">Ver producto único</div>
-            </div>
-            <h2>${producto.titulo}</h2>
-            <p class="price">$${producto.precio}</p>
-            <p class="talle">${producto.talle}</p>
-        `;
-        div.querySelector('.producto-container').addEventListener('click', () => {
-            localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
-            window.location.href = '../pages/producto-unico.html'; 
+    
+    const mostrarProductos = (productos) => {
+        productos.forEach((producto) => {
+            let div = document.createElement("div");
+            div.classList.add("product");
+            div.innerHTML = `
+                <div class="producto-container">
+                    <img class="ventaProductos" src="${producto.img}">
+                    <div class="overlay-text">Ver producto único</div>
+                </div>
+                <h2>${producto.titulo}</h2>
+                <p class="price">$${producto.precio}</p>
+                <p class="talle">${producto.talle}</p>
+            `;
+            div.querySelector('.producto-container').addEventListener('click', () => {
+                localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+                window.location.href = '../pages/producto-unico.html'; 
+            });
+            let button = document.createElement("button");
+            button.classList.add("botonCompra");
+            button.innerText = "Comprar";
+            button.addEventListener("click", () => {
+                agregarAlCarrito(producto);
+            });
+            div.append(button);
+            contenedorProductos.append(div);
         });
-        let button = document.createElement("button");
-        button.classList.add("botonCompra");
-        button.innerText = "Comprar";
-        button.addEventListener("click", () => {
-            agregarAlCarrito(producto);
-        });
-        div.append(button);
-        contenedorProductos.append(div);
-    });
-};
+    };
 const agregarAlCarrito = (producto) => {
     const productoExistente = carrito.find(item => item.sku === producto.sku);
     if (productoExistente) {
@@ -155,7 +156,7 @@ document.getElementById("confirmarPago").addEventListener("click", () => {
     if (carrito.length === 0) {
         Swal.fire("No tienes nada en el carrito!");
     }else {
-        let total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+        let total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
         Swal.fire({
             title: "Seguro que quieres confirmar la compra?",
             text: "Tu total es de $" + total.toFixed(2),

@@ -143,7 +143,7 @@ document.getElementById("confirmarPago").addEventListener("click", () => {
     if (carrito.length === 0) {
         Swal.fire("No tienes nada en el carrito!");
     }else {
-        let total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+        let total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
         Swal.fire({
             title: "Seguro que quieres confirmar la compra?",
             text: "Tu total es de $" + total.toFixed(2),
