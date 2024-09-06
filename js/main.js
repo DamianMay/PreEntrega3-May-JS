@@ -16,15 +16,11 @@ fetch("./data/productos.json")
     
     const mostrarProductos = (productos) => {
         productos.forEach((producto) => {
-            let imgPath = producto.img;
-            if (window.location.pathname === "/index.html") {
-                imgPath = imgPath.replace("../", "./");
-            }
             let div = document.createElement("div");
             div.classList.add("product");
             div.innerHTML = `
                 <div class="producto-container">
-                    <img class="ventaProductos" src="${imgPath}">
+                    <img class="ventaProductos" src="${productos.img}">
                     <div class="overlay-text">Ver producto único</div>
                 </div>
                 <h2>${producto.titulo}</h2>

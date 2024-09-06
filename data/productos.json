@@ -3,7 +3,7 @@
         "titulo": "Body beba mini",
         "precio": 5500 ,
         "talle": "Talle: 3,6,9,12 meses",
-        "img": "../Imagenes/3801.webp",
+        "img": "/Imagenes/3801.webp",
         "genero": "femenino",
         "sku": 3801
     },
