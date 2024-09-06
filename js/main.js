@@ -2,26 +2,147 @@ document.addEventListener('DOMContentLoaded', () => {
     AOS.init();
 });
 
+const productos = [
+    {
+        "titulo": "Body beba mini",
+        "precio": 5500 ,
+        "talle": "Talle: 3,6,9,12 meses",
+        "img": "./Imagenes/3801.webp",
+        "genero": "femenino",
+        "sku": 3801
+    },
+    {
+        "titulo": "Conjunto beba mini",
+        "precio": 5999 ,
+        "talle": "Talle: 3,6,9,12 meses",
+        "img": "./Imagenes/3805.webp",
+        "genero": "femenino",
+        "sku": 3805
+    },
+    {
+        "titulo": "Remera de beba",
+        "precio": 5650 ,
+        "talle": "Talle: 12,18,24,36 meses",
+        "img": "./Imagenes/3813.webp",
+        "genero": "femenino",
+        "sku": 3813
+    },
+    {
+        "titulo": "Musuculosa de beba",
+        "precio": 4999 ,
+        "talle": "Talle: 12,18,24,36 meses",
+        "img": "./Imagenes/3818.webp",
+        "genero": "femenino",
+        "sku": 3818
+    },
+    {
+        "titulo": "Body bebe mini",
+        "precio": 5650 ,
+        "talle": "Talle: 3,6,9,12 meses",
+        "img": "./Imagenes/3851.webp",
+        "genero": "masculino",
+        "sku": 3851
+    },
+    {
+        "titulo": "Remera de bebe",
+        "precio": 4900 ,
+        "talle": "Talle: 12,18,24,36 meses",
+        "img": "./Imagenes/3864.webp",
+        "genero": "masculino",
+        "sku": 3864
+    },
+    {
+        "titulo": "Musculosa de bebe",
+        "precio": 4999 ,
+        "talle": "Talle: 12,18,24,36 meses",
+        "img": "./Imagenes/3868.webp",
+        "genero": "masculino",
+        "sku": 3868
+    },
+    {
+        "titulo": "Short de bebe",
+        "precio": 4350 ,
+        "talle": "Talle: 12,18,24,36 meses",
+        "img": "./Imagenes/3871.webp",
+        "genero": "masculino",
+        "sku": 3871
+    },
+    {
+        "titulo": "Remera de nena",
+        "precio": 8900 ,
+        "talle": "Talle: 6,8,10,12,14 años",
+        "img": "./Imagenes/3901.webp",
+        "genero": "femenino",
+        "sku": 3901
+    },
+    {
+        "titulo": "Musculosa con botones",
+        "precio": 8900 ,
+        "talle": "Talle: 4,6,8,10 años",
+        "img": "./Imagenes/3911.webp",
+        "genero": "femenino",
+        "sku": 3911
+    },
+    {
+        "titulo": "Musculosa de nena",
+        "precio": 8499 ,
+        "talle": "Talle: 4,6,8,10 años",
+        "img": "./Imagenes/3914.webp",
+        "genero": "femenino",
+        "sku": 3914
+    },
+    {
+        "titulo": "Vestido de nena",
+        "precio": 8499 ,
+        "talle": "Talle: 6,8,10,12 años",
+        "img": "./Imagenes/3917.webp",
+        "genero": "femenino",
+        "sku": 3917
+    },
+    {
+        "titulo": "Remera de niño",
+        "precio": 11000 ,
+        "talle": "Talle: 10,12,14 años",
+        "img": "./Imagenes/3953.webp",
+        "genero": "masculino",
+        "sku": 3953
+    },
+    {
+        "titulo": "Remera de niño",
+        "precio": 9999,
+        "talle": "Talle: 4,6,8,10 años",
+        "img": "./Imagenes/3960.webp",
+        "genero": "masculino",
+        "sku": 3960
+    },
+    {
+        "titulo": "Remera de niño",
+        "precio": 11000 ,
+        "talle": "Talle: 10,12,14,16 años",
+        "img": "./Imagenes/3961.webp",
+        "genero": "masculino",
+        "sku": 3961
+    },
+    {
+        "titulo": "Musculosa de niño",
+        "precio": 10500 ,
+        "talle": "Talle: 8,10,12,14 años",
+        "img": "./Imagenes/3963.webp",
+        "genero": "masculino",
+        "sku": 3963
+    }
+]
 let carrito =JSON.parse(localStorage.getItem("carrito")) || [];
 
 const contenedorProductos = document.querySelector("#productos");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 
-fetch("./data/productos.json")
-    .then((respuesta) => respuesta.json())
-    .then((data) => {
-        mostrarProductos(data);
-    });
     
-    const mostrarProductos = (productos) => {
+const mostrarProductos = (productos) => {
         productos.forEach((producto) => {
             let div = document.createElement("div");
             div.classList.add("product");
-            let imgPath = producto.img;
-            if (window.location.pathname.includes('index.html') || window.location.pathname === "/") {
-            imgPath = imgPath.replace('../', './');
-            }
             div.innerHTML = `
                 <div class="producto-container">
                     <img class="ventaProductos" src="${producto.img}">
