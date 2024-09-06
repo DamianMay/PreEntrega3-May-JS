@@ -11,7 +11,7 @@
         "titulo": "Conjunto beba mini",
         "precio": 5999 ,
         "talle": "Talle: 3,6,9,12 meses",
-        "img": "../Imagenes/3805.webp",
+        "img": "./Imagenes/3805.webp",
         "genero": "femenino",
         "sku": 3805
     },
