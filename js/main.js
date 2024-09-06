@@ -8,8 +8,7 @@ fetch("../data/productos.json")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         mostrarProductos(data);
-    })
-    .catch((error) => console.error("Error al cargar los productos:", error));
+    });
 
 const contenedorProductos = document.querySelector("#productos");
 const carritoProductos = document.querySelector("#carrito-productos");

@@ -9,8 +9,7 @@ fetch("../data/productos.json")
     .then((data) => {
         const productosMasculinos = data.filter(producto => producto.genero === "masculino");
         mostrarProductos(productosMasculinos);
-    })
-    .catch((error) => console.error("Error al cargar los productos:", error));
+    });
 
     const mostrarProductos = (productos) => {
         productos.forEach((producto) => {
