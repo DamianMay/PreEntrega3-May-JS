@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init();
+    mostrarProductos(productos);
 });
 
 const productos = [
