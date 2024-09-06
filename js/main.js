@@ -8,7 +8,7 @@ const contenedorProductos = document.querySelector("#productos");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 
-fetch("../data/productos.json")
+fetch("./data/productos.json")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         mostrarProductos(data);
