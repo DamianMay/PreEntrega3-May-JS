@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let carrito =JSON.parse(localStorage.getItem("carrito")) || [];
 
-fetch("/data/productos.json")
+fetch("./data/productos.json")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         mostrarProductos(data);
