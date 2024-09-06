@@ -4,16 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let carrito =JSON.parse(localStorage.getItem("carrito")) || [];
 
+const contenedorProductos = document.querySelector("#productos");
+const carritoProductos = document.querySelector("#carrito-productos");
+const carritoTotal = document.querySelector("#carrito-total");
+
 fetch("../data/productos.json")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         mostrarProductos(data);
     });
-
-const contenedorProductos = document.querySelector("#productos");
-const carritoProductos = document.querySelector("#carrito-productos");
-const carritoTotal = document.querySelector("#carrito-total");
-
 const mostrarProductos = (productos) => {
     productos.forEach((producto) => {
         let div = document.createElement("div");
@@ -27,12 +26,10 @@ const mostrarProductos = (productos) => {
             <p class="price">$${producto.precio}</p>
             <p class="talle">${producto.talle}</p>
         `;
-
         div.querySelector('.producto-container').addEventListener('click', () => {
             localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
             window.location.href = '../pages/producto-unico.html'; 
         });
-
         let button = document.createElement("button");
         button.classList.add("botonCompra");
         button.innerText = "Comprar";
@@ -43,8 +40,6 @@ const mostrarProductos = (productos) => {
         contenedorProductos.append(div);
     });
 };
-
-
 const agregarAlCarrito = (producto) => {
     const productoExistente = carrito.find(item => item.sku === producto.sku);
     if (productoExistente) {
