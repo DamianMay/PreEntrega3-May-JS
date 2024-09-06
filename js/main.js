@@ -18,6 +18,10 @@ fetch("./data/productos.json")
         productos.forEach((producto) => {
             let div = document.createElement("div");
             div.classList.add("product");
+            let imgPath = producto.img;
+            if (window.location.pathname.includes('index.html') || window.location.pathname === "/") {
+            imgPath = imgPath.replace('../', './');
+            }
             div.innerHTML = `
                 <div class="producto-container">
                     <img class="ventaProductos" src="${producto.img}">
