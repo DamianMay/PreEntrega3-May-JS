@@ -130,6 +130,7 @@ li a{
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: rgb(240, 239, 239)
+
 }
 
 .product {
@@ -150,6 +151,10 @@ li a{
     height: 250px;
     overflow: hidden;
     cursor: pointer;
+}
+.productoIndex{
+    width: 250px;
+    height: 250px;
 }
 
 .ventaProductos {

@@ -145,18 +145,13 @@ const mostrarProductos = (productos) => {
             let div = document.createElement("div");
             div.classList.add("product");
             div.innerHTML = `
-                <div class="producto-container">
+                <div class="productoIndex">
                     <img class="ventaProductos" src="${producto.img}">
-                    <div class="overlay-text">Ver producto único</div>
                 </div>
                 <h2>${producto.titulo}</h2>
                 <p class="price">$${producto.precio}</p>
                 <p class="talle">${producto.talle}</p>
             `;
-            div.querySelector('.producto-container').addEventListener('click', () => {
-                localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
-                window.location.href = './pages/producto-unico.html'; 
-            });
             let button = document.createElement("button");
             button.classList.add("botonCompra");
             button.innerText = "Comprar";

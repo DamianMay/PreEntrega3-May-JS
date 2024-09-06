@@ -105,7 +105,7 @@ function borrarDelcarrito(producto) {
     const index = carrito.findIndex(item => item.titulo === producto.titulo);
     if (index !== -1) {
         if (carrito[index].cantidad > 1) {
-            carrito[index].cantidad -= 1;
+            carrito[index].cantidad -= 1; 
         } else {
             carrito.splice(index, 1);
         }
@@ -120,6 +120,7 @@ document.getElementById('verCarrito').addEventListener('click', function() {
 document.getElementById('cerrarCarrito').addEventListener('click', function() {
     document.getElementById('carritoSidebar').classList.remove('open');
 });
+
 
 const notificacionCarrito = document.createElement('div');
 document.body.appendChild(notificacionCarrito);
@@ -143,7 +144,7 @@ document.getElementById("confirmarPago").addEventListener("click", () => {
     if (carrito.length === 0) {
         Swal.fire("No tienes nada en el carrito!");
     }else {
-        let total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+        let total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
         Swal.fire({
             title: "Seguro que quieres confirmar la compra?",
             text: "Tu total es de $" + total.toFixed(2),
