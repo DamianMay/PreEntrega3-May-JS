@@ -4,13 +4,13 @@ const contenedorProductos = document.querySelector("#productos");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 
-fetch("../data/productos.json")
+fetch("/data/productos.json")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         const productosFemeninos = data.filter(producto => producto.genero === "femenino");
         mostrarProductos(productosFemeninos);
     });
-    
+
     const mostrarProductos = (productos) => {
         productos.forEach((producto) => {
             let div = document.createElement("div");

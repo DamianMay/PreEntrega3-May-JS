@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let carrito =JSON.parse(localStorage.getItem("carrito")) || [];
 
-fetch("../data/productos.json")
+fetch("/data/productos.json")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         mostrarProductos(data);
@@ -48,9 +48,9 @@ const mostrarProductos = (productos) => {
 const agregarAlCarrito = (producto) => {
     const productoExistente = carrito.find(item => item.sku === producto.sku);
     if (productoExistente) {
-        productoExistente.cantidad += 1; // Incrementa la cantidad si el producto ya está en el carrito
+        productoExistente.cantidad += 1;
     } else {
-        producto.cantidad = 1; // Si no existe, se añade al carrito con cantidad 1
+        producto.cantidad = 1;
         carrito.push(producto);
     }
     actualizarCarrito();
@@ -85,7 +85,6 @@ function actualizarCarrito(){
         total += producto.precio * producto.cantidad;
         cantidadTotal += producto.cantidad; 
     })
-    console.log(total)
     document.getElementById("carrito-total").innerText = `$${total.toFixed(2)}`;
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
