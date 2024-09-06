@@ -5,43 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3er Pre entrega</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logoContainer">
-            <img src="./Imagenes/logo.webp" alt="Logo" class="imagenLogo">
+            <a href="index.html">
+                <img src="./Imagenes/logo.webp" alt="Logo" class="imagenLogo">
+            </a>
         </div>
         <ul class="menu">
-            <li><a href="#">Verano</a></li>
-            <li><a href="#">Invierno</a></li>
-            <button id="verCarrito" class="botonCarrito">Ver Carrito</button>
+            <li><a href="./pages/ellas.html" id="mostrarEllas">Ellas</a></li>
+            <li><a href="./pages/ellos.html" id="mostrarEllos">Ellos</a></li>
+            <button id="verCarrito" class="botonCarrito">
+                Ver Carrito
+                <span id="carritoCantidad" class="carrito-cantidad">0</span>
+            </button>
         </ul>
     </header>
     <div id="carritoSidebar" class="carrito-sidebar">
         <div class="carrito-content">
-            <h2>Mi Carrito</h2>
-            <div class="carrito-productos" id="carrito-productos">
+            <div class="contenedorcito">   
+                <h2>Mi Carrito</h2>
+                <div class="carrito-productos" id="carrito-productos">
+                </div>
+                <div class="carrito-total">
+                    <p>Total: <span id="carrito-total"> $0.00</span></p>    
+                </div>
+                <button id="cerrarCarrito" class="cerrarCarrito">X</button>
+                <button id="confirmarPago" class="botonCompra">Confirmar compra</button>
+                <button id="vaciarCarrito" class="vaciarCarrito">Vaciar Carrito</button>
             </div>
-            <div class="carrito-total">
-                <p>Total: <span id="carrito-total"> $0.00</span></p>    
-            </div>
-            <button id="cerrarCarrito" class="cerrarCarrito">X</button>
-            <button id="confirmarPago" class="botonCompra">Confirmar compra</button>
         </div>
     </div>
     <main>
         <div class="banner">
-            <p class="banner-text">Pensar en grande, soñar en grande.</p>
+            <p class="banner-text" data-aos="fade-up" data-aos-duration="1500">Pensar en grande, soñar en grande.</p>
         </div>
-        <H1 >Nueva temporada</H1>
+        <h1>Nueva temporada</h1>
         <section class="productos" id="productos">
         </section>
     </main>
     <footer>
         <div class="logoContainer">
-            <img src="./Imagenes/logo.webp" alt="Logo" class="imagenLogo">
+            <a href="index.html">
+                <img src="./Imagenes/logo.webp" alt="Logo" class="imagenLogo">
+            </a>
         </div>
-</footer>
+    </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js/main.js"></script>
 </body>

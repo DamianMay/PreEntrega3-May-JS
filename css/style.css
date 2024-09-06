@@ -8,6 +8,7 @@ body{
     height: 100%;
     width: 100%;
 }
+
 h1{
     margin: 0;
     padding: 0;
@@ -16,20 +17,36 @@ h1{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 h2 {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
+}
+
+h3{
+font-size: 0.8em;
+margin-left: 10px;
+width: 130px;
+text-align: start;
 }
 
 header{
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
     z-index: 1000;
     background-color:transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.header-ellas-ellos{
+    background-color: white;
+}
+
+.ellasyellos{
+    margin-top: 70px;
 }
 header.scrolled {
     background-color: rgba(173, 173, 173, 0.253); 
@@ -45,6 +62,7 @@ header.scrolled {
 .imagenLogo{
     width: 13vw;
     transition: transform 0.5s ease;
+    margin-left: 50px;
 }
 
 .imagenLogo:hover {
@@ -55,8 +73,8 @@ header.scrolled {
     margin-right: 35px;
     padding: 5px 15px; 
     line-height: 1.5; 
+    font-family:Arial, Helvetica, sans-serif
 }
-
 
 .menu .ofertas {
     background-color: #c8222c; 
@@ -70,7 +88,7 @@ li a{
 }
 
 .menu li:hover{
-    color: white;
+    color: red;
     border-top: 1px solid;
     border-radius: 2px;
 }
@@ -98,26 +116,69 @@ li a{
     font-size: 4em; 
     font-weight: bold;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
+
+.minibannerellas-ellos{
+    width: 100%;
+}
+
 .productos{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #d6d6d6;
+    background-color: rgb(240, 239, 239)
 }
-.product{
+
+.product {
     text-align: center;
-    margin:2px;
     overflow: hidden;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
 }
-.ventaProductos{
-    width: 300px;
-    height: 300px;
+
+.producto-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ventaProductos {
+    width: 250px;
+    height: 250px;
     border-radius: 15px;
-    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, filter 0.5s ease;
 }
-.ventaProductos:hover{
+
+.producto-container:hover .ventaProductos {
     transform: scale(1.1);
+    filter: brightness(0.7);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.producto-container:hover .overlay-text {
+    opacity: 1;
 }
 
 .price {
@@ -126,12 +187,17 @@ li a{
     margin: 0;
 }
 
-.cuotas{
-    font-size: 1em;
-    color: #777;
+.precios-slice{
+    color: white;
+}
+
+.talle{
+    font-size: 0.9em;
+    color: #4b4a4a;
     margin:0px;
     margin-bottom: 5px;
 }
+
 .botonCompra{
     border: 0;
     background-color: #c8222c;
@@ -139,13 +205,82 @@ li a{
     border-radius: 5px;
     cursor: pointer;
 }
+
 .botonCompra:hover{
     background-color: #e92734;
     color: black;
     text-decoration: underline white;
 }
 
+.producto-detalle-flex {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.producto-unico-container {
+    flex: 1;
+    max-width: 400px; 
+    margin-right: 20px; 
+}
+
+.ventaProductos {
+    width: 100%; 
+    height: auto;
+    border-radius: 15px;
+}
+
+
+.producto-info {
+    flex: 1; 
+    text-align: left; 
+}
+
+.tituloUnico{
+    font-size: 2em;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.price-unico{
+    font-size:1.7em;
+    color: #c8222c;
+    margin: 0;
+    text-align: center;
+}
+
+.talle-unico{
+    font-size: 0.9em;
+    color: #4b4a4a;
+    margin:0px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.botonCompra-unico{
+    border: 0;
+    background-color: #c8222c;
+    padding: 10px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.botonCompra-unico:hover{
+    background-color: #e92734;
+    color: black;
+    text-decoration: underline white;
+}
+
 footer{
+    margin-top: 50px;
     background-color: #646464;
     height: 100px;
     display: flex;
@@ -154,18 +289,16 @@ footer{
     padding: 5px;
 }
 
-/*todo ESTO CORRESPONDE A TODO LO QUE ESTA DENTRO DEL SLIDE BAR*/
-
 .carrito-productos{
     display: flex;
     flex-direction: column;
     overflow-y: auto; 
-    max-height: 70vh;
+    max-height: 55vh;
 }
 
 .carrito-producto{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     margin: 2px;
     border-radius: 10px;
@@ -175,8 +308,15 @@ footer{
 .boton-eliminar-carrito{
     background-color: #c8222c;
     border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.vaciarCarrito{
+    width: 100px;
+    margin: 20px auto 0 auto;
 }
 
 .carrito-total p{
@@ -184,9 +324,9 @@ footer{
     font-weight: 800;
     text-align: center;
 }
-/*todo, ESTO CORRESPONDE A EL BOTON DEL CARRITO DE COMPRA */
 
 .botonCarrito {
+    position: relative;
     padding: 10px 20px;
     background-color: #c8222c;
     color: white;
@@ -195,12 +335,27 @@ footer{
     cursor: pointer;
     z-index: 1001; 
 }
+.carrito-cantidad {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #c8662c;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 12px;
+    display: none;
+}
+
+.botonCarrito.show .carrito-cantidad {
+    display: inline-block;
+}
 
 .carrito-sidebar {
     position: fixed;
     top: 0;
     right: -100%; 
-    width: 300px;
+    width: 350px;
     height: 100%;
     background-color: #f1f1f1;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
@@ -211,16 +366,24 @@ footer{
 }
 
 .carrito-sidebar.open {
-    right: 0;
+    right:0;
 }
 
 .carrito-content {
-    padding: 5px;
+    padding: 25px;
     height: 100%; 
     display: flex;
     flex-direction: column;
+    text-align: center;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 5%, rgba(224,208,208,1) 83%, rgba(145,78,78,1) 100%, rgba(200,34,44,1) 100%);
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
 }
-
+.contenedorcito{
+    border: 1px solid black;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.8);
+    padding-bottom: 10px;
+}
 .cerrarCarrito {
     position: absolute;
     top: 10px;
@@ -234,26 +397,12 @@ footer{
     z-index: 1001; 
 }
 
-
-
-
-/* agrega estilo a la noti de sumar algo al carrito */
-.notificacion-carrito {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #c8222c;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 1001;
+.custom-popup {
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    padding-bottom: 10px;
+    font-size: 10px;
+    border-radius: 5px; 
 }
 
-.notificacion-carrito.visible {
-    opacity: 1;
-    visibility: visible;
-}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header-ellas-ellos">
+        <div class="logoContainer">
+            <a href="../index.html">
+                <img src="../Imagenes/logo.webp" alt="Logo" class="imagenLogo">
+            </a>
+        </div>
+        <ul class="menu">
+            <li><a href="../pages/ellas.html" id="mostrarEllas">Ellas</a></li>
+            <li><a href="../pages/ellos.html" id="mostrarEllos">Ellos</a></li>
+            <button id="verCarrito" class="botonCarrito">
+                Ver Carrito
+                <span id="carritoCantidad" class="carrito-cantidad">0</span>
+            </button>
+        </ul>
+    </header>
+    <div id="carritoSidebar" class="carrito-sidebar">
+        <div class="carrito-content">
+            <h2>Mi Carrito</h2>
+            <div class="carrito-productos" id="carrito-productos">
+            </div>
+            <div class="carrito-total">
+                <p>Total: <span id="carrito-total"> $0.00</span></p>    
+            </div>
+            <button id="cerrarCarrito" class="cerrarCarrito">X</button>
+            <button id="confirmarPago" class="botonCompra">Confirmar compra</button>
+            <button id="vaciarCarrito" class="vaciarCarrito">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <main class="ellasyellos">
+        <p>Queremos que veas cada producto con sus detalles</p>
+        <div  class="producto-unico" id="producto-detalle"></div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/producto-unico.js"></script>
+</body>
+</html>
